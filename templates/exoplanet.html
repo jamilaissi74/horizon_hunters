@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exoplanets</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/exoplanet_style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ url_for('index') }}">Exoplanet Predictor</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('exoplanet') }}">Exoplanets</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+
+    <div class="card">
+      <div class="text">
+        <h2>Exoplanets</h2>
+        <p>Exoplanets, or extrasolar planets, are planets that orbit stars outside our solar system. They vary widely in size, composition, and orbital characteristics, offering valuable insights into planetary formation and the potential for life beyond Earth.</p>
+      </div>
+      <div class="image">
+        <img src="/static/images/exoplanet.jpg" alt="Exoplanet Image">
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="text">
+        <h2>Types of Exoplanets</h2>
+        <p>Exoplanets can be classified based on their physical and orbital characteristics, including:</p>
+        <ul>
+          <li><strong>Gas Giants:</strong> Large planets composed mostly of hydrogen and helium, similar to Jupiter and Saturn.</li>
+          <li><strong>Ice Giants:</strong> Planets with a thick atmosphere over icy interiors, like Uranus and Neptune.</li>
+          <li><strong>Terrestrial (Rocky) Planets:</strong> Smaller, rocky planets with solid surfaces, akin to Earth and Mars.</li>
+          <li><strong>Super-Earths:</strong> Planets with masses larger than Earth but smaller than Neptune, which may be rocky or gaseous.</li>
+          <li><strong>Mini-Neptunes:</strong> Small gas planets with thick atmospheres, smaller than Neptune but larger than Earth.</li>
+        </ul>
+      </div>
+      <div class="image">
+        <img src="/static/images/types.jpg" alt="Types of Exoplanets">
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="text">
+        <h2>Habitable Zone</h2>
+        <p>The habitable zone, often called the “Goldilocks zone,” is the region around a star where conditions are suitable for liquid water to exist on a planet’s surface. Planets within this zone are considered potential candidates for supporting life.</p>
+      </div>
+      <div class="image">
+        <img src="/static/images/habitable.jpg" alt="Habitable Zone">
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="text">
+        <h2>Transit Method</h2>
+        <p>The transit method is a technique used to detect exoplanets by observing the slight dimming of a star’s light when a planet passes—or transits—in front of it. This method allows scientists to estimate the planet’s size, orbital period, and sometimes atmospheric properties.</p>
+      </div>
+      <div class="image">
+        <img src="/static/images/transit.jpg" alt="Transit Method">
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

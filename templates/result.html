@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Prediction Result</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .table-container { max-height: 600px; overflow: auto; }
+    </style>
+  </head>
+  <body class="p-4">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{{ url_for('index') }}">Exoplanet Predictor</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('exoplanet') }}">Exoplanets</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>Prediction result</h1>
+      <p>Rows processed: <strong>{{ num_rows }}</strong>. Model used: <strong>{{ used_model }}</strong></p>
+
+      <div class="table-container mb-3">
+        {{ table_html | safe }}
+      </div>
+      
+        <p><strong>Model Accuracy:</strong> {{ accuracy | round(4) }}</p>
+        
+
+      <a href="{{ url_for('download', filename=output_filename) }}" class="btn btn-success">Download full CSV</a>
+      <a href="{{ url_for('index') }}" class="btn btn-secondary">Upload another file</a>
+    </div>
+  </body>
+</html>

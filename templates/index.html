@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A World Away – Exoplanet AI</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    @keyframes drift {
+      0% { background-position: center center; }
+      50% { background-position: 55% 60%; }
+      100% { background-position: center center; }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      color: #fff;
+      height: 100vh;
+      background: url("/static/images/5K_Exo_Beauty_HiRes_FINAL.png") no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      animation: drift 8s ease-in-out infinite;
+      overflow: hidden;
+      position: relative;
+      padding-top: 8vh;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      text-align: center;
+      z-index: 1;
+      margin-bottom: 3rem;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      background: linear-gradient(90deg, #5fd0ff, #00ffd5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 25px rgba(0, 191, 255, 0.5);
+    }
+
+    p {
+      font-size: 1.25rem;
+      color: #dbe2f7;
+      max-width: 650px;
+      margin: 0 auto 2rem auto;
+      line-height: 1.6;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+      animation: float 8s ease-in-out infinite;
+      animation-delay: 0.5s;
+    }
+
+    button {
+      background: linear-gradient(90deg, #009ffd, #2a2a72);
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      padding: 0.9rem 2.2rem;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(0, 191, 255, 0.9);
+    }
+
+    input[type="file"] { display: none; }
+
+    .bottom-section {
+      position: absolute;
+      bottom: 2rem;
+      text-align: center;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      animation: float 8s ease-in-out infinite;
+      animation-delay: 1s;
+    }
+
+    .logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4.5rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .logos img {
+      height: 180px;
+      width: auto;
+      opacity: 0.95;
+      filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+      transition: transform 0.3s ease, filter 0.3s ease;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .logos img[alt="OpenMinds Logo"] { height: 140px; }
+
+    .logos img:hover {
+      transform: scale(1.15);
+      filter: drop-shadow(0 0 35px rgba(0, 255, 255, 0.8));
+    }
+
+    footer {
+      font-size: 0.95rem;
+      color: #b5b5b5;
+      margin-top: 1rem;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      body { padding-top: 10vh; }
+      .logos img { height: 120px; }
+      .logos img[alt="OpenMinds Logo"] { height: 100px; }
+      h1 { font-size: 2.3rem; }
+      p { font-size: 1rem; max-width: 90%; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="overlay"></div>
+
+  <!-- 🌌 Main Content -->
+  <div class="content">
+    <h1>Drifting Through the Exoplanet Field</h1>
+
+    <p>This space invites you to drift among distant worlds — a quiet orbit where data meets curiosity and discovery begins.</p>
+
+    <div class="btn-container">
+      <a href="{{ url_for('model_page') }}">
+        <button type="button">Upload for Prediction</button>
+      </a>
+      <a href="{{ url_for('exoplanet') }}">
+        <button type="button">Learn More</button>
+      </a>
+    </div>
+
+
+
+  </div>
+
+  <!-- 🌠 Footer Section -->
+  <div class="bottom-section">
+    <div class="logos">
+      <a href="https://1337.ma" target="_blank">
+        <img src="/static/images/1337.jpg" alt="1337 Logo">
+      </a>
+      <a href="https://um6p.ma" target="_blank">
+        <img src="/static/images/UM6P.png" alt="UM6P Logo">
+      </a>
+      <a href="https://www.nasa.gov" target="_blank">
+        <img src="/static/images/nasa.webp" alt="NASA Logo">
+      </a>
+      <a href="https://openminds.ma" target="_blank">
+        <img src="/static/images/openminds.jpeg" alt="OpenMinds Logo">
+      </a>
+    </div>
+
+    
+    <footer>
+      © 2025 Exoplanet AI Collaboration — 1337 × UM6P × NASA × OpenMinds
+    </footer>
+  </div>
+
+  
+  <script>
+    function handleFileUpload(event) {
+      const file = event.target.files[0];
+      if (file) alert(`File "${file.name}" uploaded successfully!`);
+    }
+  </script>
+</body>
+</html>
